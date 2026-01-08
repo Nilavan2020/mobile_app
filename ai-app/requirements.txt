@@ -1,0 +1,20 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+python-dotenv==1.0.1
+
+# Face recognition
+deepface==0.0.93
+opencv-python==4.10.0.84
+pandas==2.2.3
+tf-keras>=2.15.0
+
+# Speech recognition and SMS (for Stage 3)
+SpeechRecognition==3.10.0
+pyaudio==0.2.14
+requests==2.31.0
+
+
+
+
+

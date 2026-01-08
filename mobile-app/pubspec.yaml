@@ -1,0 +1,59 @@
+name: smart_safety_welfare
+description: "Smart Safety Welfare - A client app for safety and welfare platform"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  # REQUIRED by Flutter SDK (pinned)
+  intl: ^0.20.2
+
+  # Dart 3 compatible
+  http: ^1.2.0
+  provider: ^6.1.1
+
+  flutter_secure_storage: ^8.0.0
+  fl_chart: ^0.68.0
+  geolocator: ^13.0.1
+  image_picker: ^1.0.7
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - assets/images/primary_logo.png
+    - assets/images/elephant_detection.png
+    - assets/images/instant_alerts.png
+    - assets/images/search_icon.png
+    - assets/images/dashboard_insights.png
+    - assets/images/bottom_wave.png
+    - assets/images/waitlist.png
+    - assets/images/distance_actions.png
+    - assets/images/aggression_detection.png
+    - assets/images/medical_support.png
+    - assets/images/messaging_icon.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"

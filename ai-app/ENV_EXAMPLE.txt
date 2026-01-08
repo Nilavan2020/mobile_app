@@ -1,0 +1,16 @@
+DATASET_ROOT=../web-app/storage/app/public/face_sessions
+MODEL_NAME=Facenet
+ENFORCE_DETECTION=false
+
+# SMS Gateway (for Stage 3 voice alerts)
+NOTIFY_LK_USER_ID=your_user_id_here
+NOTIFY_LK_API_KEY=your_api_key_here
+NOTIFY_LK_SENDER_ID=NotifyDEMO
+
+# Backend API URL (for Stage 3 alerts to save in database)
+WEB_APP_BASE_URL=http://127.0.0.1:8000
+
+
+
+
+

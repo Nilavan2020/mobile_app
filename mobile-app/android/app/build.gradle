@@ -1,0 +1,72 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle Plugin
+}
+
+dependencies {
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.google.errorprone:error_prone_annotations:2.10.0'
+    // Other dependencies
+}
+
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace = "com.smartsafetywelfare.app"
+    compileSdk = 35
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.smartsafetywelfare.app"
+        minSdkVersion = flutter.minSdkVersion
+        targetSdkVersion = 34
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+    }
+
+    signingConfigs {
+        release {
+            keyAlias System.getenv("MY_KEY_ALIAS") ?: MY_KEY_ALIAS
+            keyPassword System.getenv("MY_KEY_PASSWORD") ?: MY_KEY_PASSWORD
+            storeFile file('C:/devtools/my-release-key.jks')
+            storePassword System.getenv("MY_STORE_PASSWORD") ?: MY_STORE_PASSWORD
+        }
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
